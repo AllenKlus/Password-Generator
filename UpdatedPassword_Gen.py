@@ -87,8 +87,3 @@ def end():
 
 
 main()
-question()
-main_upper()
-main_lower()
-upper_lower()
-end()
