@@ -25,7 +25,7 @@ def question():
 
     global answer
 
-    answer = input("Would you like lowercase letters, or uppercase letters?(l/u)")
+    answer = input("Would you like lowercase letters, or uppercase letters.\n Or better yet, both?(l/u)")
 
     upper_lower()
 
@@ -57,6 +57,19 @@ def main_lower(numChar):
         print(new_pass, end = " ")
 
     end()
+    
+def main_both(num_char):
+    
+    print("Your password is")
+    print("----------------")
+    
+    for x in range(num_char):
+        password = ''.join(random.choice(string.ascii_lowercase + string.ascii_uppercase + string.digits))
+        new_pass = (str(password))
+        print(new_pass, end = " ")
+    
+    end()
+
 
 #Checks if the user wanted uppercase or lowercase letters, and runs the proper function
 def upper_lower():
@@ -67,6 +80,8 @@ def upper_lower():
         main_lower(numChar)
     elif answer == "u":
         main_upper(numChar)
+    elif answer == 'b':
+        main_both(num_char)
     elif answer != "l" or "u":
         print("please input 'u' or 'l'")
         question()
